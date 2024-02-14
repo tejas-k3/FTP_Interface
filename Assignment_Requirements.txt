@@ -1,0 +1,43 @@
+Dealsplus!!!!!
+
+Implement an API that allows users to upload, download, and delete files.
+* Blob file format. Max Size : 5GB, No limitation of type of file.
+* Anyone can access anything.
+
+
+GET -- Download
+Param : file_id                     Response : status_code, file
+
+DELETE -- Delete
+Param : file_id                     Response : status_code
+
+POST -- upload
+Param : file, timestamp, username   Response : Status_code, IF Success : File_id
+
+Basic requirements ----------->
+
+GET should be implemented with following pointers :
+    * Concurrency
+    * Error/Cases handling :
+        * If file doesnt exist
+        * If API is triggered multiple times
+        * Invalid parameters
+
+DEL should be implemented with following pointers :
+    * Concurrency
+    * Error handling :
+        * If file doesnt exist
+        * If API is triggered multiple times
+        * Invalid parameters
+        * If file is being downloaded.
+
+POST should be implemented with following pointers :
+    * Concurrency
+    * Duplicates are allowed
+    * Error/Cases handling :
+        * If API is triggered multiple times
+        * Invalid parameters
+        * If file size exceeds max allowed size
+        * If FREE storage space is less than current upload(s)
+
+Multiple files OPTIONAL
